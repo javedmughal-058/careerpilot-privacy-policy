@@ -2,54 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
-  <title>Privacy Policy | CareerPilot - Resume Builder</title>
+  <title>Privacy Policy - CareerPilot</title>
 
   <meta
     name="description"
-    content="Privacy Policy for CareerPilot - Resume Builder, developed by Evolix Technologies."
+    content="Privacy Policy for CareerPilot - Resume Builder. Learn how CareerPilot handles resume data, local storage, optional Google sign-in, exports, sharing, and offline use."
   />
 
-  <meta
-    name="robots"
-    content="index, follow"
-  />
-
-  <meta
-    name="theme-color"
-    content="#1565F9"
-  />
+  <meta name="theme-color" content="#111111" />
 
   <style>
     :root {
-      --primary: #1565f9;
-      --primary-dark: #0d47d9;
-      --primary-light: #eaf2ff;
+      --bg: #f6f6f6;
+      --card: #ffffff;
+      --text: #111111;
+      --muted: #737373;
+      --border: #e8e8e8;
 
-      --background: #f8fafc;
-      --surface: #ffffff;
+      --accent: #ffcb74;
+      --accent-soft: #fff0cf;
 
-      --text-primary: #0f172a;
-      --text-secondary: #64748b;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
 
-      --border: #e2e8f0;
+      --radius-lg: 26px;
+      --radius-md: 18px;
 
-      --info-bg: #eff6ff;
-      --info-border: #bfdbfe;
-
-      --shadow:
-        0 8px 30px rgba(15, 23, 42, 0.05);
+      --max-width: 900px;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -58,7 +44,7 @@
 
     body {
       font-family:
-        "Urbanist",
+        Inter,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
@@ -67,921 +53,554 @@
         Arial,
         sans-serif;
 
-      background: var(--background);
-      color: var(--text-primary);
+      background: var(--bg);
+      color: var(--text);
 
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: 0.2s ease;
-    }
-
-    a:hover {
-      color: var(--primary-dark);
-      text-decoration: underline;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     .page {
       width: 100%;
-      max-width: 920px;
-
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 48px 20px 72px;
+      padding: 44px 20px 64px;
     }
 
-    /* =========================
-       Header
-       ========================= */
+    /* -----------------------------
+       Brand
+    ------------------------------ */
 
-    .header {
-      text-align: center;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
       margin-bottom: 34px;
     }
 
     .app-logo {
-      width: 108px;
-      height: 108px;
-
+      width: 60px;
+      height: 60px;
       object-fit: contain;
-
+      border-radius: 16px;
+      flex-shrink: 0;
       display: block;
-      margin: 0 auto 20px;
     }
 
-    .header h1 {
-      font-size: 36px;
+    .brand-text h2 {
+      font-size: 23px;
+      line-height: 1.1;
       font-weight: 800;
-      line-height: 1.2;
+      letter-spacing: -0.4px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
 
-      letter-spacing: -0.7px;
+    .brand-text span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
 
-      margin-bottom: 8px;
+    /* -----------------------------
+       Header
+    ------------------------------ */
+
+    .header {
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 54px);
+      line-height: 1.08;
+      font-weight: 850;
+      letter-spacing: -1.8px;
+      margin-bottom: 10px;
     }
 
     .subtitle {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text-secondary);
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 620px;
     }
 
-    .meta {
-      margin-top: 18px;
+    /* -----------------------------
+       Highlight Card
+    ------------------------------ */
+
+    .highlight-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 26px;
 
       display: flex;
-      flex-direction: column;
-      gap: 4px;
+      gap: 18px;
+      align-items: flex-start;
 
-      color: var(--text-secondary);
-      font-size: 14px;
-    }
-
-    /* =========================
-       Main Card
-       ========================= */
-
-    .card {
-      background: var(--surface);
-
-      border: 1px solid var(--border);
-      border-radius: 22px;
-
-      padding: 38px;
+      margin-bottom: 22px;
 
       box-shadow: var(--shadow);
     }
 
-    h2 {
-      font-size: 23px;
-      font-weight: 750;
+    .highlight-icon {
+      width: 56px;
+      height: 56px;
 
-      letter-spacing: -0.25px;
+      border-radius: 18px;
+      background: var(--accent-soft);
 
-      margin-top: 38px;
-      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
     }
 
-    h2:first-child {
-      margin-top: 0;
+    .highlight-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--text);
     }
 
-    h3 {
-      font-size: 18px;
-      font-weight: 700;
-
-      margin-top: 24px;
-      margin-bottom: 8px;
+    .highlight-card h3 {
+      font-size: 19px;
+      font-weight: 800;
+      margin-bottom: 6px;
     }
 
-    p {
-      margin-bottom: 15px;
-      color: #334155;
+    .highlight-card p {
+      color: var(--muted);
+      font-size: 15.5px;
     }
 
-    ul {
-      margin: 10px 0 20px 24px;
-      color: #334155;
-    }
+    /* -----------------------------
+       Policy Card
+    ------------------------------ */
 
-    li {
-      margin-bottom: 8px;
-      padding-left: 4px;
-    }
-
-    strong {
-      color: var(--text-primary);
-    }
-
-    /* =========================
-       Important Notice
-       ========================= */
-
-    .notice {
-      background: var(--info-bg);
-
-      border: 1px solid var(--info-border);
-
-      border-radius: 14px;
-
-      padding: 18px;
-
-      margin: 22px 0;
-
-      color: #1e3a8a;
-    }
-
-    .notice strong {
-      color: var(--primary-dark);
-    }
-
-    /* =========================
-       Contact Box
-       ========================= */
-
-    .contact-box {
-      margin-top: 18px;
-
-      padding: 20px;
-
+    .policy-card {
+      background: var(--card);
       border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+
+      box-shadow: var(--shadow);
+
+      overflow: hidden;
+    }
+
+    .policy-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+
+      padding: 25px 26px;
+    }
+
+    .policy-item + .policy-item {
+      border-top: 1px solid var(--border);
+    }
+
+    .section-icon {
+      width: 44px;
+      height: 44px;
+
       border-radius: 14px;
+      background: var(--accent-soft);
 
-      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .contact-box p:last-child {
-      margin-bottom: 0;
+    .section-icon svg {
+      width: 22px;
+      height: 22px;
+
+      stroke: var(--text);
+      stroke-width: 1.9;
     }
 
-    /* =========================
-       Footer
-       ========================= */
+    .policy-item h3 {
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
 
-    .footer {
-      margin-top: 38px;
+    .policy-item p {
+      color: var(--muted);
+      font-size: 15.5px;
+    }
 
+    /* -----------------------------
+       Bottom
+    ------------------------------ */
+
+    .updated {
+      margin-top: 20px;
       text-align: center;
 
-      color: var(--text-secondary);
-
+      color: var(--muted);
       font-size: 14px;
     }
 
-    .footer p {
-      margin-bottom: 4px;
-      color: var(--text-secondary);
+    .footer {
+      margin-top: 42px;
+      text-align: center;
+
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .footer strong {
-      color: var(--text-primary);
+      display: block;
+      color: var(--text);
+      font-size: 16px;
+      margin-bottom: 4px;
     }
 
-    /* =========================
+    /* -----------------------------
        Responsive
-       ========================= */
+    ------------------------------ */
 
-    @media (max-width: 768px) {
-
+    @media (max-width: 640px) {
       .page {
-        padding: 28px 14px 50px;
+        padding: 30px 16px 44px;
+      }
+
+      .brand {
+        margin-bottom: 28px;
       }
 
       .app-logo {
-        width: 92px;
-        height: 92px;
+        width: 54px;
+        height: 54px;
+        border-radius: 15px;
       }
 
-      .header h1 {
-        font-size: 29px;
+      .brand-text h2 {
+        font-size: 21px;
       }
 
-      .subtitle {
-        font-size: 16px;
+      h1 {
+        letter-spacing: -1.2px;
       }
 
-      .card {
-        padding: 24px 19px;
-        border-radius: 16px;
+      .highlight-card {
+        padding: 20px;
+        border-radius: 22px;
       }
 
-      h2 {
-        font-size: 20px;
-        margin-top: 31px;
+      .highlight-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 15px;
       }
 
-      body {
-        font-size: 15.5px;
+      .policy-card {
+        border-radius: 22px;
+      }
+
+      .policy-item {
+        grid-template-columns: 42px 1fr;
+        gap: 13px;
+        padding: 21px 19px;
+      }
+
+      .section-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 13px;
       }
     }
 
-    @media (max-width: 420px) {
+    /* -----------------------------
+       Dark Mode
+    ------------------------------ */
 
-      .app-logo {
-        width: 84px;
-        height: 84px;
-      }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111111;
+        --card: #1b1b1b;
+        --text: #f6f6f6;
+        --muted: #a5a5a5;
+        --border: #303030;
 
-      .header h1 {
-        font-size: 27px;
-      }
+        --accent-soft: rgba(255, 203, 116, 0.14);
 
-      .card {
-        padding: 22px 17px;
+        --shadow: none;
       }
     }
   </style>
 </head>
 
 <body>
-
   <main class="page">
 
-    <!-- =======================================
-         Header
-         ======================================= -->
-
-    <header class="header">
-
+    <!-- Brand -->
+    <div class="brand">
       <img
         src="careerpilot-logo.png"
         alt="CareerPilot Resume Builder Logo"
         class="app-logo"
       />
 
+      <div class="brand-text">
+        <h2>CareerPilot</h2>
+        <span>Resume Builder</span>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
       <h1>Privacy Policy</h1>
 
       <p class="subtitle">
-        CareerPilot - Resume Builder
+        How CareerPilot handles your resume information.
       </p>
-
-      <div class="meta">
-        <span>Developed by Evolix Technologies</span>
-        <span>Last updated: September 17, 2026</span>
-      </div>
-
     </header>
 
-
-    <!-- =======================================
-         Privacy Policy
-         ======================================= -->
-
-    <section class="card">
-
-
-      <!-- 1 -->
-
-      <h2>1. Introduction</h2>
-
-      <p>
-        Welcome to CareerPilot - Resume Builder ("CareerPilot",
-        "the App", "we", "our", or "us"), developed by
-        Evolix Technologies.
-      </p>
-
-      <p>
-        This Privacy Policy explains how information may be collected,
-        processed, stored, used, and protected when you use CareerPilot.
-      </p>
-
-      <p>
-        CareerPilot is designed as an offline-first resume-building
-        application. You can create, edit, customize, preview, and export
-        resumes without creating an account.
-      </p>
-
-      <p>
-        Google Sign-In and cloud synchronization are optional features
-        intended for users who want to synchronize or back up their
-        resume information across supported devices.
-      </p>
-
-      <div class="notice">
-        <strong>Important:</strong>
-        You do not need to create an account or sign in to create,
-        edit, preview, or export resumes using CareerPilot.
+    <!-- Main Privacy Highlight -->
+    <section class="highlight-card">
+      <div class="highlight-icon" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="5" y="10" width="14" height="10" rx="2"></rect>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+        </svg>
       </div>
 
-
-      <!-- 2 -->
-
-      <h2>2. Information You Provide</h2>
-
-      <p>
-        CareerPilot processes information that you voluntarily provide
-        while creating or editing a resume.
-      </p>
-
-      <p>
-        Depending on the information you choose to add,
-        this may include:
-      </p>
-
-      <ul>
-        <li>Full name</li>
-        <li>Email address</li>
-        <li>Phone number</li>
-        <li>Address or location</li>
-        <li>Professional title</li>
-        <li>Profile photo</li>
-        <li>Professional summary</li>
-        <li>Employment history</li>
-        <li>Education information</li>
-        <li>Professional and technical skills</li>
-        <li>Projects</li>
-        <li>Certifications</li>
-        <li>Achievements</li>
-        <li>Languages</li>
-        <li>Interests</li>
-        <li>References</li>
-        <li>Custom resume sections</li>
-        <li>Other information that you choose to include in your resume</li>
-      </ul>
-
-      <p>
-        You control which information and resume sections you choose
-        to provide and include.
-      </p>
-
-
-      <!-- 3 -->
-
-      <h2>3. Offline Resume Data</h2>
-
-      <p>
-        CareerPilot is designed to provide core resume-building
-        functionality offline.
-      </p>
-
-      <p>
-        When you use CareerPilot without enabling cloud synchronization,
-        your resume information is stored locally on your device.
-      </p>
-
-      <p>
-        Resume information stored locally is not intentionally uploaded
-        to our cloud infrastructure unless you choose to use a feature
-        that requires cloud processing or synchronization.
-      </p>
-
-      <p>
-        If you uninstall the App, clear application storage, reset your
-        device, or lose access to your device without first synchronizing
-        your information, your locally stored resume data may be lost.
-      </p>
-
-
-      <!-- 4 -->
-
-      <h2>4. Optional Google Sign-In</h2>
-
-      <p>
-        CareerPilot may allow you to optionally sign in using your
-        Google account.
-      </p>
-
-      <p>
-        Google Sign-In is not required to create or export a resume.
-      </p>
-
-      <p>
-        If you choose to sign in, we may receive basic account
-        information provided by Google, such as:
-      </p>
-
-      <ul>
-        <li>Your name</li>
-        <li>Your email address</li>
-        <li>Your Google account identifier</li>
-        <li>Your Google profile photo, where available</li>
-      </ul>
-
-      <p>
-        This information may be used to authenticate your account
-        and provide optional synchronization features.
-      </p>
-
-      <p>
-        CareerPilot does not receive or store your Google account
-        password.
-      </p>
-
-      <p>
-        Google Sign-In is also subject to Google's own terms,
-        policies, and privacy practices.
-      </p>
-
-
-      <!-- 5 -->
-
-      <h2>5. Cloud Synchronization</h2>
-
-      <p>
-        If you choose to sign in and enable synchronization,
-        your resume information may be stored using cloud services,
-        including Google Firebase.
-      </p>
-
-      <p>
-        Cloud synchronization may be used to:
-      </p>
-
-      <ul>
-        <li>Back up your resumes</li>
-        <li>Restore synchronized resumes</li>
-        <li>Synchronize resumes across supported devices</li>
-        <li>Store account-related preferences</li>
-        <li>Maintain synchronization status</li>
-      </ul>
-
-      <p>
-        Cloud synchronization is optional.
-      </p>
-
-
-      <!-- 6 -->
-
-      <h2>6. Firebase Services</h2>
-
-      <p>
-        CareerPilot may use services provided by Google Firebase
-        to provide selected online functionality.
-      </p>
-
-      <p>
-        Depending on the version and configuration of the App,
-        these services may include:
-      </p>
-
-      <ul>
-        <li>Firebase Authentication</li>
-        <li>Cloud Firestore</li>
-        <li>Firebase Cloud Messaging</li>
-        <li>Firebase Crashlytics</li>
-        <li>Firebase Analytics</li>
-      </ul>
-
-      <p>
-        Firebase may process certain technical, application,
-        device, diagnostic, or usage information as required
-        to provide those services.
-      </p>
-
-      <p>
-        The exact data processed depends on which Firebase services
-        are enabled in the version of CareerPilot you use.
-      </p>
-
-
-      <!-- 7 -->
-
-      <h2>7. Notifications</h2>
-
-      <p>
-        CareerPilot may provide notifications relating to
-        resume reminders, new templates, important application
-        information, feature updates, or other relevant content.
-      </p>
-
-      <p>
-        Where required by your operating system,
-        CareerPilot will request permission before sending
-        notifications.
-      </p>
-
-      <p>
-        You may disable notifications through your device
-        settings at any time.
-      </p>
-
-
-      <!-- 8 -->
-
-      <h2>8. Premium Templates and In-App Purchases</h2>
-
-      <p>
-        CareerPilot may provide free and premium resume templates.
-      </p>
-
-      <p>
-        Premium templates or other paid digital features may be
-        purchased through Google Play Billing.
-      </p>
-
-      <p>
-        Payments are processed by Google Play.
-      </p>
-
-      <p>
-        Evolix Technologies does not directly receive or store
-        your complete payment card information.
-      </p>
-
-      <p>
-        We may receive limited transaction information required
-        to validate and maintain purchases, including:
-      </p>
-
-      <ul>
-        <li>Product identifier</li>
-        <li>Purchase status</li>
-        <li>Purchase token</li>
-        <li>Transaction identifiers</li>
-        <li>Entitlement status</li>
-      </ul>
-
-      <p>
-        This information may be used to verify purchases,
-        unlock premium content, restore purchases,
-        and help prevent unauthorized use.
-      </p>
-
-
-      <!-- 9 -->
-
-      <h2>9. Resume PDF Generation and Export</h2>
-
-      <p>
-        CareerPilot allows you to generate resume documents,
-        including PDF files, using information you provide.
-      </p>
-
-      <p>
-        PDF generation may take place locally on your device.
-      </p>
-
-      <p>
-        When you choose to save, print, share, or export a resume,
-        your document may be transferred to an application,
-        device location, cloud provider, person, employer,
-        or service selected by you.
-      </p>
-
-      <p>
-        Once you share or export a resume outside CareerPilot,
-        we cannot control how the receiving application,
-        service, or recipient processes that information.
-      </p>
-
-
-      <!-- 10 -->
-
-      <h2>10. Information Automatically Collected</h2>
-
-      <p>
-        Depending on the services enabled within the App,
-        limited technical information may be collected automatically.
-      </p>
-
-      <p>
-        This may include:
-      </p>
-
-      <ul>
-        <li>Device type</li>
-        <li>Operating system version</li>
-        <li>Application version</li>
-        <li>Crash information</li>
-        <li>Diagnostic information</li>
-        <li>Performance information</li>
-        <li>General feature usage events</li>
-        <li>Application or device identifiers where permitted</li>
-      </ul>
-
-      <p>
-        This information may be used to maintain application stability,
-        identify technical issues, improve performance,
-        and understand how application features are used.
-      </p>
-
-
-      <!-- 11 -->
-
-      <h2>11. How We Use Information</h2>
-
-      <p>
-        Information processed through CareerPilot may be used to:
-      </p>
-
-      <ul>
-        <li>Create and manage resumes</li>
-        <li>Store resume information locally</li>
-        <li>Provide optional cloud synchronization</li>
-        <li>Authenticate users who choose to sign in</li>
-        <li>Generate resume documents</li>
-        <li>Provide PDF export functionality</li>
-        <li>Provide free and premium resume templates</li>
-        <li>Verify and restore in-app purchases</li>
-        <li>Provide notifications where enabled</li>
-        <li>Improve performance and reliability</li>
-        <li>Identify and diagnose technical issues</li>
-        <li>Protect CareerPilot from fraud or abuse</li>
-        <li>Comply with applicable legal obligations</li>
-      </ul>
-
-
-      <!-- 12 -->
-
-      <h2>12. Sharing of Information</h2>
-
-      <p>
-        Evolix Technologies does not sell your personal information.
-      </p>
-
-      <p>
-        Information may be processed by service providers
-        when reasonably necessary to provide CareerPilot functionality.
-      </p>
-
-      <p>
-        These service providers may include:
-      </p>
-
-      <ul>
-        <li>Google Firebase</li>
-        <li>Google Sign-In</li>
-        <li>Google Play Billing</li>
-        <li>Cloud infrastructure providers</li>
-        <li>Analytics providers where enabled</li>
-        <li>Crash and diagnostic service providers where enabled</li>
-      </ul>
-
-      <p>
-        Information may also be disclosed when required by law,
-        legal process, court order, government request,
-        or when reasonably necessary to protect the security,
-        rights, or safety of CareerPilot, Evolix Technologies,
-        our users, or others.
-      </p>
-
-
-      <!-- 13 -->
-
-      <h2>13. Data Security</h2>
-
-      <p>
-        We use reasonable administrative, technical,
-        and organizational measures intended to protect information
-        processed through CareerPilot.
-      </p>
-
-      <p>
-        However, no electronic storage system or transmission method
-        can guarantee absolute security.
-      </p>
-
-      <p>
-        You are responsible for maintaining the security of your device,
-        Google account, and exported resume files.
-      </p>
-
-
-      <!-- 14 -->
-
-      <h2>14. Data Retention</h2>
-
-      <p>
-        Resume information stored locally generally remains on your device
-        until you delete the resume, clear application data,
-        uninstall CareerPilot, or your operating system removes the data.
-      </p>
-
-      <p>
-        If cloud synchronization is enabled,
-        synchronized information may remain stored while your account
-        is active or for as long as reasonably necessary to provide
-        requested services.
-      </p>
-
-      <p>
-        Certain information may also be retained where necessary
-        to comply with legal obligations, prevent fraud,
-        resolve disputes, or enforce applicable agreements.
-      </p>
-
-
-      <!-- 15 -->
-
-      <h2>15. Account and Data Deletion</h2>
-
-      <p>
-        You may delete locally stored resumes using available
-        CareerPilot deletion controls.
-      </p>
-
-      <p>
-        Users who choose Google Sign-In and cloud synchronization
-        may also request deletion of synchronized CareerPilot account
-        information.
-      </p>
-
-      <p>
-        To request deletion of cloud-stored data,
-        please contact Evolix Technologies.
-      </p>
-
-      <div class="contact-box">
+      <div>
+        <h3>Local-first by design</h3>
 
         <p>
-          <strong>Email:</strong>
-          <a href="mailto:privacy@evolixtechnologies.com">
-            privacy@evolixtechnologies.com
-          </a>
+          CareerPilot is built to help you create resumes offline.
+          Your resume content stays on your device unless you choose
+          to sign in, sync, share, export, print, or use another
+          device feature.
         </p>
-
-        <p>
-          <strong>Subject:</strong>
-          CareerPilot Data Deletion Request
-        </p>
-
       </div>
+    </section>
 
-      <p style="margin-top: 16px;">
-        We may need to verify your identity before completing
-        certain deletion requests.
-      </p>
+    <!-- Privacy Sections -->
+    <section class="policy-card">
 
+      <!-- Information You Add -->
+      <article class="policy-item">
+        <div class="section-icon" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="4" y="5" width="16" height="14" rx="2"></rect>
+            <circle cx="9" cy="10" r="2"></circle>
+            <path d="M6.5 16c.7-2 4.3-2 5 0"></path>
+            <path d="M14 9h3"></path>
+            <path d="M14 13h3"></path>
+          </svg>
+        </div>
 
-      <!-- 16 -->
+        <div>
+          <h3>Information you add</h3>
 
-      <h2>16. Your Choices</h2>
+          <p>
+            Resume details such as your name, contact details,
+            education, work experience, skills, projects,
+            certifications, achievements, languages, interests,
+            references, template choices, and profile photo are used
+            to create your resumes and previews.
+          </p>
+        </div>
+      </article>
 
-      <p>
-        CareerPilot gives you control over how you use the App.
-      </p>
+      <!-- Device Storage -->
+      <article class="policy-item">
+        <div class="section-icon" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="7" y="2" width="10" height="20" rx="2"></rect>
+            <path d="M10 18h4"></path>
+          </svg>
+        </div>
 
-      <p>
-        Depending on available features, you may choose to:
-      </p>
+        <div>
+          <h3>Device storage</h3>
 
-      <ul>
-        <li>Use CareerPilot without signing in</li>
-        <li>Keep resume information only on your device</li>
-        <li>Sign in with Google for optional synchronization</li>
-        <li>Enable or disable selected resume sections</li>
-        <li>Reorder resume sections</li>
-        <li>Delete saved resumes</li>
-        <li>Disable notifications</li>
-        <li>Sign out of your account</li>
-        <li>Request deletion of synchronized data</li>
-      </ul>
+          <p>
+            The app stores resume drafts, settings, template
+            selections, onboarding status, and generated files locally
+            so the app remains usable without an internet connection.
+          </p>
+        </div>
+      </article>
 
+      <!-- Optional Account Features -->
+      <article class="policy-item">
+        <div class="section-icon" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M6 18h11a4 4 0 0 0 .7-7.9A6 6 0 0 0 6.4 8.4 4.8 4.8 0 0 0 6 18Z"
+            ></path>
+            <path d="m9 14 2 2 4-4"></path>
+          </svg>
+        </div>
 
-      <!-- 17 -->
+        <div>
+          <h3>Optional account features</h3>
 
-      <h2>17. Third-Party Services</h2>
+          <p>
+            If you continue with Google, authentication information
+            such as your name, email address, and profile photo may be
+            used to show your account and enable optional cloud-related
+            features.
+          </p>
+        </div>
+      </article>
 
-      <p>
-        CareerPilot may integrate with third-party services
-        required to provide certain functionality.
-      </p>
+      <!-- Sharing and Exports -->
+      <article class="policy-item">
+        <div class="section-icon" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 3v12"></path>
+            <path d="m8 7 4-4 4 4"></path>
+            <path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"></path>
+          </svg>
+        </div>
 
-      <p>
-        Third-party services operate according to their own
-        privacy policies and terms.
-      </p>
+        <div>
+          <h3>Sharing and exports</h3>
 
-      <p>
-        We encourage you to review the privacy policies
-        of third-party services that you use in connection
-        with CareerPilot.
-      </p>
+          <p>
+            When you export, print, or share a resume, the selected PDF
+            and its content are sent only to the system service or app
+            you choose, such as a printer, email app, file manager, or
+            messaging app.
+          </p>
+        </div>
+      </article>
 
+      <!-- Offline Use -->
+      <article class="policy-item">
+        <div class="section-icon" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M2 2l20 20"></path>
+            <path d="M8.5 8.5A7 7 0 0 1 19 9"></path>
+            <path d="M5 12a10 10 0 0 1 1.5-2.5"></path>
+            <path d="M8.5 15.5a5 5 0 0 1 7 0"></path>
+            <path d="M12 19h.01"></path>
+          </svg>
+        </div>
 
-      <!-- 18 -->
+        <div>
+          <h3>Offline use</h3>
 
-      <h2>18. Children's Privacy</h2>
+          <p>
+            Core resume creation, preview, and export features are
+            intended to work offline. Some optional features, including
+            sign-in and external sharing destinations, may require
+            internet access.
+          </p>
+        </div>
+      </article>
 
-      <p>
-        CareerPilot is not specifically directed toward children
-        below the minimum age required to independently consent
-        to data processing in their jurisdiction.
-      </p>
+      <!-- Your Control -->
+      <article class="policy-item">
+        <div class="section-icon" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 3 5 6v5c0 5 3 8 7 10 4-2 7-5 7-10V6l-7-3Z"></path>
+            <path d="m9 12 2 2 4-4"></path>
+          </svg>
+        </div>
 
-      <p>
-        We do not knowingly collect personal information from children
-        in violation of applicable law.
-      </p>
+        <div>
+          <h3>Your control</h3>
 
-      <p>
-        If you believe that a child has provided personal information
-        through CareerPilot in violation of applicable law,
-        please contact us so that we can review the matter.
-      </p>
+          <p>
+            You can edit or remove resume information inside the app.
+            You can also sign out at any time from the Profile screen.
+            Files you export or share are controlled by the destination
+            app or location you selected.
+          </p>
+        </div>
+      </article>
 
+      <!-- Contact -->
+      <article class="policy-item">
+        <div class="section-icon" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 21V9l8-5 8 5v12"></path>
+            <path d="M9 21v-6h6v6"></path>
+            <path d="M8 10h.01"></path>
+            <path d="M12 10h.01"></path>
+            <path d="M16 10h.01"></path>
+          </svg>
+        </div>
 
-      <!-- 19 -->
+        <div>
+          <h3>Contact</h3>
 
-      <h2>19. International Data Processing</h2>
-
-      <p>
-        Cloud and third-party services used by CareerPilot
-        may process information in countries other than the country
-        where you are located.
-      </p>
-
-      <p>
-        Where required, appropriate safeguards may be used
-        for international data processing in accordance
-        with applicable requirements.
-      </p>
-
-
-      <!-- 20 -->
-
-      <h2>20. Changes to This Privacy Policy</h2>
-
-      <p>
-        We may update this Privacy Policy from time to time
-        to reflect changes in CareerPilot functionality,
-        technologies, services, legal requirements,
-        or our privacy practices.
-      </p>
-
-      <p>
-        When changes are made, the "Last updated" date
-        displayed at the top of this page will be revised.
-      </p>
-
-      <p>
-        We encourage you to review this Privacy Policy periodically.
-      </p>
-
-
-      <!-- 21 -->
-
-      <h2>21. Contact Us</h2>
-
-      <p>
-        If you have questions, concerns, or requests relating
-        to this Privacy Policy or CareerPilot's privacy practices,
-        you may contact:
-      </p>
-
-      <div class="contact-box">
-
-        <p>
-          <strong>Evolix Technologies</strong>
-        </p>
-
-        <p>
-          <strong>Application:</strong>
-          CareerPilot - Resume Builder
-        </p>
-
-        <p>
-          <strong>Email:</strong>
-          <a href="mailto:info@evolixtechnologies.com">
-            info@evolixtechnologies.com
-          </a>
-        </p>
-
-      </div>
+          <p>
+            For privacy questions about CareerPilot, contact
+            <strong>Evolix Technologies</strong>.
+          </p>
+        </div>
+      </article>
 
     </section>
 
-
-    <!-- =======================================
-         Footer
-         ======================================= -->
+    <p class="updated">
+      Last updated: September 17, 2026
+    </p>
 
     <footer class="footer">
-
-      <p>
-        © 2026 <strong>Evolix Technologies</strong>.
-        All rights reserved.
-      </p>
-
-      <p>
-        CareerPilot - Resume Builder
-      </p>
-
+      <strong>CareerPilot - Resume Builder</strong>
+      <p>Developed by Evolix Technologies</p>
     </footer>
 
   </main>
-
 </body>
 </html>
